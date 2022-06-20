@@ -1,5 +1,5 @@
-# What's sup?
-What's sup is a recipe application that provides the user with mutiple recipe options based on four search criteria: cuisine, ingredients, calories and diet preference. Registered user can create a favorite list of recipes.
+# What's Sup?
+What's Sup is a recipe application that provides the user with mutiple recipe options based on four search criteria: cuisine, ingredients, calories and diet preference. Registered user can create a favorite list of recipes.
 
 ## Group Members
 - Jay Park
