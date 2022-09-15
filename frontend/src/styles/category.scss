@@ -5,21 +5,21 @@
   gap: 15px;
   
   h4 {
-    color: white;
+    color: rgb(151, 199, 65);
   }
 
   .link {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid darkgreen;
     border-radius: 50%;
+    margin: 7px;
     width: 100px;
-    background: linear-gradient(25deg, rgb(114, 147, 114), rgb(187, 242, 69) );
+    background: rgba(26, 44, 66, 0.7);
     text-decoration: none;
 
     &:hover {
-      background: linear-gradient(115deg, rgb(114, 147, 114), rgb(187, 242, 69) );
+      background: rgb(26, 44, 66);
       box-shadow: 2px 2px rgb(8, 22, 1);
       border-radius: 30%;
     }
@@ -28,6 +28,7 @@
   svg {
     margin-top: 10px;
     font-size: 2rem;
-    color: rgb(38, 78, 7);
+    color: rgb(151, 199, 65);
+    z-index: 1;
   } 
 }
