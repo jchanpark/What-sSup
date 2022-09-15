@@ -4,12 +4,16 @@
   align-items: center;
   gap: 10px;
   padding: 10px;
-  background: rgba(214, 242, 6, 0.869);
+  background: rgb(26,44,66);
   height: 30px;
   padding-right: 80px;
 
   .link {
     text-decoration: none;
-    color: black;
+    color: rgb(151,199,65);
+  }
+
+  h3 {
+    color: rgb(151,199,65);
   }
 }

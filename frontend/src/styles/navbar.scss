@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: rgb(3, 50, 3);
+  background: rgb(26, 44, 66);
   height: 75px;
   width: 100%;
   padding-left: 10px;
@@ -23,7 +23,7 @@
 
   svg {
     font-size: 35px;
-    color: white;
+    color: rgb(151, 199, 65);
 
     &:hover {
       font-size: 40px;
@@ -41,11 +41,15 @@
 }
 
 .nav--title {
-  color: white;
+  color: rgb(151, 199, 65);
   text-align: left;
   margin-right: 2em;
   font-family: 'Satisfy', cursive;
   font-size: 30px;
+
+  &:hover {
+    color: white;
+  }
 }
 
 .nav--options {
@@ -60,11 +64,13 @@
   border: none;
   height: 40px;
   font-size: 18px;
-  background:rgba(94, 182, 94, 0.6);
+  font-weight: 550;
+  background:rgb(151, 199, 65);
   border-radius: 5px;
+  color: rgb(26,44,66);
   cursor: pointer;
 
   &:hover {
-    background-color: white;
+    background: rgb(82, 110, 28);
   }
 }
