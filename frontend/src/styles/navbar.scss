@@ -61,16 +61,17 @@
 
 .loginicon, .signupicon {
   width: 120px;
-  border: none;
+  border: solid rgb(151, 199, 65);
+  border-width: thin;
   height: 40px;
   font-size: 18px;
   font-weight: 550;
-  background:rgb(151, 199, 65);
-  border-radius: 5px;
-  color: rgb(26,44,66);
+  background:rgb(26, 44, 66);
+  border-radius: 20px;
+  color: rgb(151, 199, 65);
   cursor: pointer;
 
   &:hover {
-    background: rgb(82, 110, 28);
+    background: rgba(46, 93, 150, 0.7);
   }
 }

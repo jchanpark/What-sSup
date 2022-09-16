@@ -30,10 +30,10 @@ export default function Home() {
       </div>
 
       <div className='msg'>
-        <h2 >Welcome to What's Sup</h2>
+        <h1 >Yummy choices for your tummy!</h1>
         <span>
-          Yummy choices for your tummy! <br/> Take your taste buds for a tour with our different cuisines
-          or find recipes based on ingredients, diet, or calories.
+          Take your taste buds for a tour with our different cuisines
+          or find recipes <br/>      based on ingredients, diet, or calories.
         </span>
       </div>
       

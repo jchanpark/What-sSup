@@ -13,7 +13,7 @@
 
 .form-box{
   width: 300px;
-  background: rgb(12, 75, 18);
+  background: rgba(12, 75, 18, 0.9);
   border-radius: 20px;
   padding-left: 100px;
   padding-right: 100px;
@@ -51,10 +51,10 @@
 .login-btn{
   width: 100px;
   height: 40px;
-  background-color: rgb(48,172,251);
-  color: white;
-  border-radius: 6px;
-  border: none;
+  background-color: rgba(12, 75, 18, 0.9);
+  color:  white;
+  border-radius: 20px;
+  border-color: white;
   font-size: 13pt;
   cursor: pointer;
 }

@@ -14,8 +14,7 @@
   word-wrap: break-word;
   margin: 20px;
   margin-left: 60px;
-  background-color: yellow;
-  box-shadow: 10px 10px rgba(225, 225, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 
   h3 {
     text-align: center;
@@ -56,12 +55,11 @@
   border-radius: 50%;
   background: none;
   border: none;
-  color: rgb(38, 78, 7);
+  color: white;
   cursor: pointer;
   transition: 1s;
 
   &:hover {
-    color: yellow;
     font-size: 100px;
   }
 }
