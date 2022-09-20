@@ -14,7 +14,7 @@ export default function Navbar() {
   const { user, setUser } = useContext(userContext);  
 
   return (
-    <div className="nav">   
+    <div className="nav">      
       <div>
         <Link className="link" to={'/'}>
           <h2 className="nav--title"> What's Sup? <GiSpoon /> </h2>
@@ -34,8 +34,6 @@ export default function Navbar() {
 
       {user.mode === "SignIn" && <Login />}
       {user.mode === "SignUp" && <SignUp />}
-
-
     </div>
   );
 }

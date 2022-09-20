@@ -37,22 +37,35 @@ export default function Popular() {
 				<h1>Popular recipes</h1>
 				<Splide
 					options={{
-            perPage: 4,
-            perMove: 1,
+            perPage: 5,
+						breakpoints: {
+							640: {
+								perPage: 1,
+							},
+							768: {
+								perPage: 2,
+							},
+							1024: {
+								perPage: 3,
+							},
+							1440: {
+								perPage: 5,
+							},
+						},				
+            perMove: 1,						
             type: 'loop',
             focus: 'center',
-            drag: 'free',
-					}}
-				>
+            drag: 'free',						
+					}}>
 					{popular.map(recipe => {
 						return (
-							<SplideSlide key={recipe.id}>
+							<SplideSlide key={recipe.id}>								
 								<div className='popular--receipe--card'>
 									<Link className='link' to={`/recipe/${recipe.id}`}>
 										<img src={recipe.image} alt={recipe.title} />
 										<p>{recipe.title}</p>
 									</Link>
-								</div>
+								</div>								
 							</SplideSlide>
 						);
 					})}

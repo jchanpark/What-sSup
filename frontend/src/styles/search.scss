@@ -91,3 +91,10 @@
 ::-webkit-input-placeholder {
   font-size: 20px;
 }
+
+@media screen and (max-width: 760px) {
+  .search--form input {
+    background-color: white;
+    z-index: 2;
+  }
+}

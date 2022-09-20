@@ -7,7 +7,7 @@
   height: 75px;
   width: 100%;
   padding-left: 10px;
-  padding-right: 20px;
+  // padding-right: 20px;
   position: fixed;
   z-index: 1;
 
@@ -74,4 +74,35 @@
   &:hover {
     background: rgba(46, 93, 150, 0.7);
   }
+}
+
+@media screen and (max-width: 1350px) {
+  .nav {  
+    .link-home {
+      position: absolute;
+      left: 50%;
+    }
+  }
+  
+  .nav--options {
+    display: flex;
+    left: 60%;
+    position: absolute;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .nav .link-home {
+    display: none;
+  }
+
+  .nav--options {
+    display: flex;
+    left: 40%;
+    position: absolute;
+    gap: 10px;
+  }
+
+
 }

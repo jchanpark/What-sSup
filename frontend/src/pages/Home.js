@@ -33,7 +33,7 @@ export default function Home() {
         <h1 >Yummy choices for your tummy!</h1>
         <span>
           Take your taste buds for a tour with our different cuisines
-          or find recipes <br/>      based on ingredients, diet, or calories.
+          <br/>or find recipes based on ingredients, diet, or calories.
         </span>
       </div>
       
