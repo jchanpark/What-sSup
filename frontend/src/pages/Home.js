@@ -30,7 +30,7 @@ export default function Home() {
       </div>
 
       <div className='msg'>
-        <h1 >Yummy choices for your tummy!</h1>
+        <h1 >Yummy choices for your tummi!</h1>
         <span>
           Take your taste buds for a tour with our different cuisines
           <br/>or find recipes based on ingredients, diet, or calories.
