@@ -103,6 +103,17 @@
     position: absolute;
     gap: 10px;
   }
+}
 
+@media screen and (max-width: 460px) {
+  .nav .link-home {
+    display: none;
+  }
 
+  .nav--options {
+    display: flex;
+    left: 20%;
+    position: absolute;
+    gap: 10px;
+  }
 }

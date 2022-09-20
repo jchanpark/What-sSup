@@ -84,9 +84,10 @@ label {
 .error-message {
   width: 300px;
   height: 40px;
-  font-size: 16px;
-  color: rgb(231, 83, 83);
+  font-size: 25px;
+  color: orangered;
   text-align: center;
+  z-index: 3;
 }
 
 .greeting {
@@ -98,16 +99,19 @@ label {
 }
 
 .logout-icon, .favorite-icon {
-  width: 120px;
-  border: none;
+  width: 130px;
+  border: solid rgb(151, 199, 65);
+  border-width: thin;
   height: 40px;
   font-size: 18px;
-  background:rgb(94, 182, 94, 0.6);
-  border-radius: 5px;
+  font-weight: 550;
+  background:rgb(26, 44, 66);
+  border-radius: 20px;
+  color: rgb(151, 199, 65);
   cursor: pointer;
 
   &:hover {
-    background-color: white
+    background: rgba(46, 93, 150, 0.7);
   }
 }
 
@@ -126,4 +130,96 @@ label {
   position: relative;
   padding-top: 20px;
   left: 70%;
+}
+
+@media screen and (max-width: 1350px) {
+  .nav {  
+    .link-home {
+      position: absolute;
+      left: 50%;
+    }
+  }
+
+  .logout_favorite-icon {
+    display: flex;
+    left: 60%;
+    position: absolute;
+    gap: 10px;
+  }
+
+  .greeting {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .login--form {
+    width: 300px;
+    left: 40%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .login--form {
+    width: 300px;
+    left: 30%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .nav .link-home {
+    display: none;
+  }
+
+  .logout_favorite-icon {
+    display: flex;
+    left: 40%;
+    position: absolute;
+    gap: 10px;
+  }
+
+  .greeting {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login--form {
+    width: 200px;
+    left: 25%;
+  }
+
+  .form-box {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .nav--title {
+    display: none;
+  }
+
+  .nav .link-home {
+    display: none;
+  }
+
+  .logout_favorite-icon {
+    display: flex;
+    left: 20%;
+    position: absolute;
+    gap: 10px;
+  }
+
+  .greeting {
+    display: none;
+  }
+
+  .login--form {
+    width: 130px;
+    left: 30%;
+  }
+
+  .form-box {
+    width: 130px;
+  }
 }
