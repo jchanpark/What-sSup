@@ -3,31 +3,117 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: rgba(68, 93, 19, 0.691);
+  background: rgb(26, 44, 66);
   height: 75px;
-  width: auto;
+  width: 100%;
   padding-left: 10px;
-  padding-right: 20px;
+  // padding-right: 20px;
+  position: fixed;
+  z-index: 1;
+
+  .link {
+    text-decoration: none;
+    position: relative;
+    left: 6%;
+  }
+  .link-home {
+    position: absolute;
+    left: 74%;
+  }
+
+  svg {
+    font-size: 35px;
+    color: rgb(151, 199, 65);
+
+    &:hover {
+      font-size: 40px;
+    }
+  }
+
+  h2 {
+    svg {
+      &:hover {
+        color: white;
+        font-size: 35px;
+      }
+    }
+  }
 }
 
 .nav--title {
-  color: rgb(5, 4, 57);
+  color: rgb(151, 199, 65);
   text-align: left;
-  padding-left: 20px;
+  margin-right: 2em;
   font-family: 'Satisfy', cursive;
   font-size: 30px;
+
+  &:hover {
+    color: white;
+  }
 }
 
-.nav--login_signup button {
-  background: rgb(243, 240, 239);
-  font-size: 17px;
-  font-style: italic;
-  border: none;
-  margin: 0;
-  padding: 0;
+.nav--options {
+  display: flex;
+  left: 78%;
+  position: absolute;
+  gap: 10px;
 }
 
-.nav--login_signup:hover {
-  background: rgba(161, 207, 68, 0.691);
-  font-weight: bold;  
+.loginicon, .signupicon {
+  width: 120px;
+  border: solid rgb(151, 199, 65);
+  border-width: thin;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 550;
+  background:rgb(26, 44, 66);
+  border-radius: 20px;
+  color: rgb(151, 199, 65);
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(46, 93, 150, 0.7);
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .nav {  
+    .link-home {
+      position: absolute;
+      left: 50%;
+    }
+  }
+  
+  .nav--options {
+    display: flex;
+    left: 60%;
+    position: absolute;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .nav .link-home {
+    display: none;
+  }
+
+  .nav--options {
+    display: flex;
+    left: 40%;
+    position: absolute;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .nav .link-home {
+    display: none;
+  }
+
+  .nav--options {
+    display: flex;
+    left: 20%;
+    position: absolute;
+    gap: 10px;
+  }
 }

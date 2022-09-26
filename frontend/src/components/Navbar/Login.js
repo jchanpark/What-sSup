@@ -1,68 +1,66 @@
-import { useState } from "react"
-import axios from "axios";
-import SignUp from "./SignUp";
+import { useContext, useState } from "react"
+import { userContext } from "../../providers/AuthProvider";
+import { useNavigate } from "react-router-dom";
+
+import "../../styles/login.scss"
 
 
-export default function Login(props) {
+export default function Login() {  
 
-  const [state, setState] = useState({
-    name: "",
-    password: "",
-    email: "",
-    activeUser: false,
-    error: "",
-    mode: ""
-  });
+  const { user, setUser, logout, onSubmitLoginForm } = useContext(userContext);
+  const [closeLogin, setCloseLogin] = useState(false);
+  const navigate = useNavigate();
 
-  const onSubmitLoginForm = async (event) => {
-    event.preventDefault();
-    const user = { email: state.email, password: state.password };
-    axios.post("http://localhost:8080/login", user)
-      .then((response) => {
-        setState(prev => ({ ...prev, name: response.data.name, error: response.data.error, email: state.email, activeUser: true }));
-      });
+  const closeHandler = e => {    
+    setUser(prev => ({ ...prev, mode: ""}));
+    setCloseLogin(true);
   };
 
-  const onClick = (event) => {
-    event.preventDefault();
-    setState({
-      name: "",
-      password: "",
-      email: "",
-      activeUser: false,
-      error: ""
-    })
-  }
-
-  if (state.activeUser && !state.error) {
+  const submitHandler = e => {
+    e.preventDefault();
+    navigate(`/favorites/${user.user_id}`);
+  };
+ 
+  if (user.activeUser && !user.error) {
     return (
-      <>
-        <h5> What's sup {state.name}</h5>
-        <button onClick={onClick}>Logout</button>
+      <>        
+        <div className="logout_favorite-icon">
+          <button className="logout-icon" onClick={logout}>Logout</button>
+          <button className="favorite-icon" onClick={submitHandler}>My Favorites</button>
+        </div>
+        <p className="greeting"> What's sup, {user.name} !</p>
       </>
     )
   } else {
     return (
-      <>
-        <form onSubmit={onSubmitLoginForm}>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="enter email"
-            onChange={e => (setState(prev => ({ ...prev, email: e.target.value })))}
-          />
-          <input
-            type="password"
-            className="form-control"
-            placeholder="enter password"
-            onChange={e => (setState(prev => ({ ...prev, password: e.target.value })))}
-          />
-          <button>Login</button>
-          {props.mode != "SignUp" && <button onClick={() => props.setMode("SignUp")}>SignUp</button>}
-          <h6>{state.error}</h6>
-        </form>
-        {props.mode == "SignUp" && <SignUp state={state} setState={setState} mode={props.mode} setMode={props.setMode}></SignUp>}
-      </>
+      <div className="login--form"  onClick={closeHandler}>
+      <div className="show" onClick={e => e.stopPropagation()}>                                       
+            {closeLogin === false && <form className="form-box" onSubmit={onSubmitLoginForm}>
+              <button className="close-btn" onClick={closeHandler}> X </button>
+              <h1 className="login-text">Login</h1>
+              <br/>
+              <label>Email</label>
+              <input
+                type="text"
+                name="email"
+                className="login-box"
+                onChange={e => (setUser(prev => ({ ...prev, email: e.target.value })))}
+              />
+              <br/>
+              <label>Password</label>
+              <input
+                type="password"
+                autoComplete="on"
+                name="password"
+                className="login-box"
+                onChange={e => (setUser(prev => ({ ...prev, password: e.target.value })))}
+              />
+              <br/>
+              <button type="submit" className="login-btn" >SUBMIT</button>             
+              <h6 className="error-message">{user.error}</h6>
+            </form>}     
+      </div>
+      </div>
     )
   }
 }

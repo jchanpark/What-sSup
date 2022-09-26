@@ -1,25 +1,44 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import '../styles/recipe.scss'
+import axios from "axios";
+import { GiCoolSpices } from 'react-icons/gi'
+import { BiMessageDetail } from 'react-icons/bi'
+import { BsFillBookmarkHeartFill } from 'react-icons/bs'
+import { userContext } from '../providers/AuthProvider';
 
 export default function Recipe() {
 	let params = useParams();
+	const { user, setUser } = useContext(userContext);
 
 	const [details, setDetails] = useState();
 	const [activeTab, setActiveTab] = useState('ingredients');
 
 	useEffect(() => {
-		const fetchDetails = async () => {
-			const data = await fetch(
+		function getDetails() {
+			axios.get(
 				`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
-			);
-			const detailData = await data.json();
-			setDetails(detailData);
+			)
+      .then((response) => {
+        const detailData = response.data;
+        setDetails(detailData);
+      })
+      .catch(() => {console.log('err')});
 		};
-		fetchDetails();
+		getDetails();
 	}, [params.name]);
 
+	//helper function to handle add recipe to favorite list.
+	function addToFavorite() {
+		setActiveTab('favorites')
+		return axios.post(`http://localhost:8080/favorite`, { user_id: user.user_id, recipeid: details.id, title: details.title, image: details.image })
+			.then((response) => {
+				setUser(prev => ({ ...prev, message: response.data.message }))
+			});
+	}
+
 	return (
-		<div>
+		<div className='details' >
 			<div>
 				<h2>{details?.title}</h2>
 				<img src={details?.image} alt="" />
@@ -30,32 +49,46 @@ export default function Recipe() {
 					className={activeTab === 'ingredients' ? 'active' : ''}
 					onClick={() => setActiveTab('ingredients')}
 				>
-					Ingredients
+					Ingredients <GiCoolSpices />
 				</button>
 
 				<button
 					className={activeTab === 'instructions' ? 'active' : ''}
 					onClick={() => setActiveTab('instructions')}
 				>
-					Instructions
+					Instructions <BiMessageDetail />
 				</button>
 
-        {activeTab === 'ingredients' && (
-          <ul>
-            {details?.extendedIngredients.map(ingredient => {
-              return <li key={ingredient.id}>{ingredient.original}</li>;
-            })}
-          </ul>
-        )}
+				<button
+					className={activeTab === 'favorites' ? 'active' : ''}
+					onClick={() => addToFavorite()}
+				>
+					Add to favorites <BsFillBookmarkHeartFill />
+				</button>
 
-				{activeTab === 'instructions' && (
-					<div>
-						<h3 dangerouslySetInnerHTML={{ __html: details?.summary }}></h3>
-						<h3
-							dangerouslySetInnerHTML={{ __html: details?.instructions }}
-						></h3>
-					</div>
-				)}
+				<div className='details--div' >
+					{activeTab === 'ingredients' && (
+						<ul>
+							{details?.extendedIngredients.map(ingredient => {
+								return <li key={ingredient.id}>{ingredient.original}</li>;
+							})}
+						</ul>
+					)}
+
+					{activeTab === 'instructions' && (
+						<div>
+							<h4 dangerouslySetInnerHTML={{ __html: details?.summary }}></h4>
+							<h3
+								dangerouslySetInnerHTML={{ __html: details?.instructions }}
+							></h3>
+						</div>
+					)}
+
+          {activeTab === 'favorites' && (
+              <h2> {user.message} </h2>
+					)}
+
+				</div>
 
 			</div>
 		</div>

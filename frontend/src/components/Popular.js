@@ -2,58 +2,70 @@ import { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import '../styles/popular.scss'
 
 export default function Popular() {
 	const [popular, setPopular] = useState([]);
 
-	useEffect(() => {
-		getPopular();
-	}, []);
-
-	const getPopular = async () => {
+	function getPopular() {
 		const check = localStorage.getItem('popular');
 
 		if (check) {
 			setPopular(JSON.parse(check));
 		} else {
-			try {
-				const api = await fetch(
-					`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=8`
-				);
-				const data = await api.json();
-
-				localStorage.setItem('popular', JSON.stringify(data.recipes));
-				setPopular(data.recipes);
-			} catch (err) {
-				console.log(err);
+				axios.get(
+					`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=12`
+				)
+        .then((response) => {
+          const data = response.data;
+          localStorage.setItem('popular', JSON.stringify(data.recipes));
+          setPopular(data.recipes);
+        })
+        .catch(() => {console.log('err')});
 			}
-		}
-	};
+		};
+  
+  useEffect(() => {
+		getPopular();
+	}, []);
 
 	return (
 		<div>
 			<div className='popular--box' >
-				<h3>Popular recipes</h3>
+				<h1>Popular recipes</h1>
 				<Splide
 					options={{
-						perPage: 6,
-						arrows: false,
-						pagination: false,
-						drag: 'free',
-            autoplay: true,
-					}}
-				>
+            perPage: 5,
+						breakpoints: {
+							640: {
+								perPage: 1,
+							},
+							768: {
+								perPage: 2,
+							},
+							1024: {
+								perPage: 3,
+							},
+							1440: {
+								perPage: 5,
+							},
+						},				
+            perMove: 1,						
+            type: 'loop',
+            focus: 'center',
+            drag: 'free',						
+					}}>
 					{popular.map(recipe => {
 						return (
-							<SplideSlide key={recipe.id}>
+							<SplideSlide key={recipe.id}>								
 								<div className='popular--receipe--card'>
-									<Link to={`/recipe/${recipe.id}`}>
-										<p>{recipe.title}</p>
+									<Link className='link' to={`/recipe/${recipe.id}`}>
 										<img src={recipe.image} alt={recipe.title} />
+										<p>{recipe.title}</p>
 									</Link>
-								</div>
+								</div>								
 							</SplideSlide>
 						);
 					})}

@@ -33,7 +33,7 @@ module.exports = (db) => {
 
     //validate email and password are provided
     if (!email || !password) {
-      return res.json({ error: "Invalid User!" })
+      return res.json({ error: "Invalid credentials!" })
     }
     //check email and password exist in the database
     getUserByEmail(email, password, db)
@@ -42,7 +42,7 @@ module.exports = (db) => {
           // req.session.userID = user.id; // set cookies
           return res.json(user)
         } else {
-          return res.json({ error: `The email email ${email} or password does not match record` });
+          return res.json({ error: `The ${email} or password does not match record` });
         }
       })
       .catch(error => {
