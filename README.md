@@ -32,7 +32,10 @@ What's Sup is a responsive web application that provides users with multiple rec
 ![Favorite_cusine](https://github.com/jchanpark/WhatsSup/blob/main/frontend/docs/favorite_cuisine.gif?raw=true)
 
 ### Search by Ingredients
-![Favorite_cusine](https://github.com/jchanpark/WhatsSup/blob/main/frontend/docs/search_by_ingredients.gif?raw=true)
+![Search_by_ingredients](https://github.com/jchanpark/WhatsSup/blob/main/frontend/docs/search_by_ingredients.gif?raw=true)
+
+### Daily meal plan by calories
+![Daily_meal_plan](https://github.com/jchanpark/WhatsSup/blob/main/frontend/docs/daily_meal_plan.gif?raw=true)
 
 
 ## Dependencies
