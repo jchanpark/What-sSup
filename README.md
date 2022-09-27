@@ -24,15 +24,8 @@ What's Sup is a responsive web application that provides users with multiple rec
 
 
 ## Screenshots
-![Demo](https://github.com/prashanthk02/whatssup/blob/main/frontend/docs/demo.webm?raw=true)
+![Signup_demo](https://github.com/prashanthk02/whatssup/blob/main/frontend/docs/signup_demo.gif?raw=true)
 
-![Home Page](https://github.com/prashanthk02/whatssup/blob/main/frontend/docs/Img1.png?raw=true)
-
-![Home page with search](https://github.com/prashanthk02/whatssup/blob/main/frontend/docs/Img2.png?raw=true)
-
-![Recipe search by cuisine](https://github.com/prashanthk02/whatssup/blob/main/frontend/docs/Img3.png?raw=true)
-
-![Recipe details](https://github.com/prashanthk02/whatssup/blob/main/frontend/docs/Img4.png?raw=true)
 
 ## Dependencies
 * Axios
