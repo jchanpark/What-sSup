@@ -24,7 +24,12 @@ What's Sup is a responsive web application that provides users with multiple rec
 
 
 ## Screenshots
+
+### Signup
 ![Signup_demo](https://github.com/jchanpark/WhatsSup/blob/main/frontend/docs/signup_demo.gif?raw=true)
+
+### Favorite Cuisine
+![Favorite_cusine](https://github.com/jchanpark/WhatsSup/blob/main/frontend/docs/favorite_cuisine.gif?raw=true)
 
 
 ## Dependencies
