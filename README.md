@@ -1,11 +1,6 @@
 # What's Sup?
 What's Sup is a responsive web application that provides users with multiple recipe options based on your search criteria: cuisine, ingredients, calories and diet preferences. Registered users can create a favorite list of recipes.
 
-## Group Members
-- Jay Park
-- Prasanth Kommidi
-- Ikenna Ezike
-
 ## Screenshots
 
 ### Signup
