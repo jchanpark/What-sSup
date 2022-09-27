@@ -23,6 +23,9 @@ What's Sup is a responsive web application that provides users with multiple rec
 ### Popular recipes
 ![Popular_recipes](https://github.com/jchanpark/WhatsSup/blob/main/frontend/docs/popular_recipes.gif?raw=true)
 
+### Responsiveness
+![Responsiveness](https://github.com/jchanpark/WhatsSup/blob/main/frontend/docs/responsiveness.gif?raw=true)
+
 ## Setup
 
 ### Getting started
