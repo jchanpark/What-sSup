@@ -1,5 +1,5 @@
 # What's Sup?
-What's Sup is a recipe application that provides the user with mutiple recipe options based on four search criteria: cuisine, ingredients, calories and diet preference. Registered user can create a favorite list of recipes.
+What's Sup is a responsive web application that provides users with multiple recipe options based on your search criteria: cuisine, ingredients, calories and diet preferences. Registered users can create a favorite list of recipes.
 
 ## Group Members
 - Jay Park
@@ -24,6 +24,8 @@ What's Sup is a recipe application that provides the user with mutiple recipe op
 
 
 ## Screenshots
+![Demo](https://github.com/prashanthk02/whatssup/blob/main/frontend/docs/demo.webm?raw=true)
+
 ![Home Page](https://github.com/prashanthk02/whatssup/blob/main/frontend/docs/Img1.png?raw=true)
 
 ![Home page with search](https://github.com/prashanthk02/whatssup/blob/main/frontend/docs/Img2.png?raw=true)
