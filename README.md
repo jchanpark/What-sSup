@@ -31,6 +31,9 @@ What's Sup is a responsive web application that provides users with multiple rec
 ### Favorite Cuisine
 ![Favorite_cusine](https://github.com/jchanpark/WhatsSup/blob/main/frontend/docs/favorite_cuisine.gif?raw=true)
 
+### Search by Ingredients
+![Favorite_cusine](https://github.com/jchanpark/WhatsSup/blob/main/frontend/docs/search_by_ingredients.gif?raw=true)
+
 
 ## Dependencies
 * Axios
